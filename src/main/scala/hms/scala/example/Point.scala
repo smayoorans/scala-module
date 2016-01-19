@@ -1,9 +1,9 @@
 package hms.scala.example
 
-class Point(xc: Int, yc: Int) {
+class Point(xc: Int, yc: Int) extends Similarity {
 
-  var x = xc
-  var y = yc
+  var x: Int = xc
+  var y: Int = yc
 
   def move(dx: Int, dy: Int) = {
     x = x + dx
@@ -12,5 +12,9 @@ class Point(xc: Int, yc: Int) {
 
   override def toString: String = {
     "(" + x + ", " + y + ")"
+  }
+
+  def isSimilar(obj: Any): Boolean = {
+    obj.isInstanceOf[Point] && obj.asInstanceOf[Point].x == x
   }
 }
