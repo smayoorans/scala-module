@@ -1,8 +1,12 @@
-name :="scala-module"
- 
-scalaVersion :="2.10.4" // scala version
- 
-version :="1.0" //project version
 
+lazy val commonSetting = Seq(
+  organization := "com.madrona",
+  version := "1.0.1",
+  scalaVersion := "2.10.4"
+)
 
-libraryDependencies += "org.mongodb" %% "casbah" % "2.5.0"
+lazy val root = (project in file("."))
+  .settings(commonSetting: _*)
+  .settings(
+    name := "skylark"
+  )
