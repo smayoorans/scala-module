@@ -1,4 +1,6 @@
-package hms.scala.example.cake.pattern
+package hms.scala.example.cake.pattern.repo
+
+import hms.scala.example.cake.pattern.domain.User
 
 trait UserRepositoryComponent {
 

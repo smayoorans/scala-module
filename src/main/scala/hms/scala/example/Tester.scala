@@ -1,8 +1,10 @@
 package hms.scala.example
 
+import scala.collection.mutable
+
 object Tester {
 
-  import scala.collection.mutable._
+
   def main(args: Array[String]) {
 
     println("Hello ")
@@ -11,14 +13,14 @@ object Tester {
 
     println(list.map(e => e + "2"))
 
-    val fruit = Set("apple", "orange", "peach", "banana")
-    val fruit2 = Set("apple")
+    val fruit = mutable.Set("apple", "orange", "peach", "banana")
+    val fruit2 = mutable.Set("apple")
 
     println(fruit.apply("apple"))
     println(fruit2.subsetOf(fruit))
 
     //Adding
-    val strings: Set[String] = Set("pine", "mango")
+    val strings: mutable.Set[String] = mutable.Set("pine", "mango")
     val x = fruit += "mango"
 
     println(x)
