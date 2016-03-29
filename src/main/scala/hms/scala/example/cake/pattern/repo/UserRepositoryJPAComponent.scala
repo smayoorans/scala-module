@@ -21,6 +21,13 @@ trait UserRepositoryJPAComponent extends UserRepositoryComponent {
 
   class UserUpdaterJPA(em: EntityManager) extends UserUpdater {
 
+    override def save(user: User): Unit = {
+      // we use this function to wrap the command in a transaction. JPA requires this
+      transactionally {
+        em.persist(user)
+      }
+    }
+
     def transactionally[T](f: => T) = {
       val tx = em.getTransaction
       tx.begin()
@@ -28,13 +35,6 @@ trait UserRepositoryJPAComponent extends UserRepositoryComponent {
       tx.commit()
 
       ret
-    }
-
-    override def save(user: User): Unit = {
-      // we use this function to wrap the command in a transaction. JPA requires this
-      transactionally{
-        em.persist(user)
-      }
     }
   }
 
