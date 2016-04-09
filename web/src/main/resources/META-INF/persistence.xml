@@ -4,7 +4,7 @@
              version="2.0">
 
     <persistence-unit name="com.madrona.example" transaction-type="RESOURCE_LOCAL">
-        <class>hms.scala.example.cake.pattern.domain.User</class>
+        <class>org.madrona.web.pattern.domain.User</class>
 
         <properties>
             <property name="hibernate.show_sql" value="true"/>
