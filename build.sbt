@@ -30,18 +30,24 @@ lazy val core = (project in file("core")).settings(commonSetting: _*).settings(
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
+
 resolvers += "Maven repository" at "http://repo1.maven.org/maven2/"
+
 resolvers += "JBoss repository" at "https://repository.jboss.org/nexus/content/groups/public/"
+
 resolvers += "sonatype-releases" at "http://oss.sonatype.org/content/repositories/releases"
+
 resolvers += "Spray repository" at "http://repo.spray.io"
+
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
-//Vaadin addons
 resolvers += "Vaadin add-ons repository" at "http://maven.vaadin.com/vaadin-addons"
+
 resolvers += "Scaladin Snapshots" at "http://henrikerola.github.io/repository/snapshots/"
+
 
 scalacOptions in Test ++= Seq("-Yrangepos")
 
-autoScalaLibrary := false
+autoScalaLibrary := true
 
 scalacOptions in ThisBuild ++= Seq("-deprecation", "-unchecked", "-encoding", "UTF-8")
