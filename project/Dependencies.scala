@@ -1,7 +1,7 @@
 import sbt._
 
 object Dependencies {
-  // Versions
+
   lazy val akkaVersion = "2.3.8"
   lazy val scalaLibVersion = "2.11.7"
   lazy val mockitoVersion = "1.8.5"
@@ -39,7 +39,6 @@ object Dependencies {
   val casbah = "org.mongodb" %% "casbah" % "3.1.1"
   val salat = "com.novus" %% "salat" % "1.9.9"
 
-  // Projects
   val coreDependencies = Seq(mockito, junit)
 
   val utilDependencies = Seq(mockito, junit)

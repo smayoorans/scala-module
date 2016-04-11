@@ -31,7 +31,7 @@ class FileBulkReader(val source: File) extends BulkReader {
 
 object Tester {
   def main(args: Array[String]) {
-    println(new FileBulkReader(new File("/home/mayooran/Desktop/scala-module/src/main/scala/hms/scala/example/bulkreader/test.txt")).read)
+    println(new FileBulkReader(new File("test.txt")).read)
     println(new StringBulkReader("Hello").read)
 
     val list = List(1, 3, 34, 23, 12, 53, 21, 55, 22, 33)
